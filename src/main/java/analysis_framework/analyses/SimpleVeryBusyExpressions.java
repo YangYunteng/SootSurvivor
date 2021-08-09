@@ -26,13 +26,13 @@ public class SimpleVeryBusyExpressions implements VeryBusyExpressions {
             unitToExpressionsBefore.put(s, Collections.unmodifiableList(set.toList()));
 
             set = (FlowSet) analysis.getFlowAfter(s);
-            unitToExpressionsAfter.put(s,Collections.unmodifiableList(set.toList()));
+            unitToExpressionsAfter.put(s, Collections.unmodifiableList(set.toList()));
         }
     }
 
     @Override
     public List getBusyExpressionsBefore(Unit s) {
-        return (List)unitToExpressionsBefore.get(s);
+        return (List) unitToExpressionsBefore.get(s);
     }
 
     @Override
