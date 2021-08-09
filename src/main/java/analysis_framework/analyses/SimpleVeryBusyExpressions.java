@@ -17,25 +17,27 @@ public class SimpleVeryBusyExpressions implements VeryBusyExpressions {
 
     public SimpleVeryBusyExpressions(DirectedGraph graph) {
         SimpleVeryBusyAnalysis analysis = new SimpleVeryBusyAnalysis(graph);
+
         unitToExpressionsAfter = new HashMap(graph.size() * 2 + 1, 0.7f);
         unitToExpressionsBefore = new HashMap(graph.size() * 2 + 1, 0.7f);
-
-        Iterator unitIt = graph.iterator();
-        while (unitIt.hasNext()) {
-            Unit s = (Unit) unitIt.next();
+        for (Object o : graph) {
+            Unit s = (Unit) o;
             FlowSet set = (FlowSet) analysis.getFlowBefore(s);
             unitToExpressionsBefore.put(s, Collections.unmodifiableList(set.toList()));
+
+            set = (FlowSet) analysis.getFlowAfter(s);
+            unitToExpressionsAfter.put(s,Collections.unmodifiableList(set.toList()));
         }
     }
 
     @Override
     public List getBusyExpressionsBefore(Unit s) {
-        return null;
+        return (List)unitToExpressionsBefore.get(s);
     }
 
     @Override
     public List getBusyExpressionsAfter(Unit s) {
-        return null;
+        return (List) unitToExpressionsAfter.get(s);
     }
 }
 
@@ -73,15 +75,17 @@ class SimpleVeryBusyAnalysis extends BackwardFlowAnalysis {
      * Note: If we had information about all the possible values
      * the sets could contain, we could initialize with that and
      * then remove values during the analysis.
+     *
      * @return an empty set
      */
     @Override
     protected Object newInitialFlow() {
         return emptySet.clone();
     }
+
     //理论上我认为这边是应当定义为全集的，但是可能代码实现和理论层面还是存在出入吧
     @Override
-    protected Object entryInitialFlow(){
+    protected Object entryInitialFlow() {
         return emptySet.clone();
     }
 
