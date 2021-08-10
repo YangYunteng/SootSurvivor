@@ -1,0 +1,35 @@
+i0 := @parameter0: int
+i1 := @parameter1: int
+i9 = i0 - 1
+i10 = i1
+$i2 = i1 + 1
+r0 = newarray (int)[$i2]
+i3 = r0[i1]
+i11 = 0
+if i11 > i1 goto $i12 = i9 + 1
+$i8 = i11 * 3
+r0[i11] = $i8
+i11 = i11 + 1
+goto [?= (branch)]
+$i12 = i9 + 1
+
+i9 = $i12
+$i13 = r0[$i12]
+if $i13 < i3 goto $i12 = i9 + 1
+$i5 = i10 - 1
+i10 = $i5
+$i4 = r0[$i5]
+if $i4 < i3 goto $i5 = i10 - 1
+if $i12 < $i5 goto i14 = r0[$i12]
+
+goto [?= i15 = r0[$i12]]
+i14 = r0[$i12]
+$i6 = r0[$i5]
+r0[$i12] = $i6
+r0[$i5] = i14
+goto [?= $i12 = i9 + 1]
+i15 = r0[$i12]
+$i7 = r0[i1]
+r0[$i12] = $i7
+r0[i1] = i15
+return

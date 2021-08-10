@@ -1,0 +1,37 @@
+Before: (0)
+Before: (1)i0	
+Before: (2)i1	i0	
+Before: (2)i9	i1	
+Before: (3)i9	i1	i10	
+Before: (4)i9	i1	i10	$i2	
+Before: (4)r0	i1	i10	i9	
+Before: (5)r0	i1	i10	i3	i9	
+Before: (6)r0	i1	i10	i3	i9	i11	
+Before: (6)r0	i1	i10	i3	i9	i11	
+Before: (7)r0	i1	i10	i3	i9	i11	$i8	
+Before: (6)r0	i1	i10	i3	i9	i11	
+Before: (6)r0	i1	i10	i3	i9	i11	
+Before: (5)r0	i1	i10	i3	i9	
+Before: (5)r0	i1	$i12	i3	i10	
+
+Before: (6)r0	i1	$i12	i3	i10	i9	
+Before: (7)r0	i1	$i12	i3	i10	i9	$i13	
+Before: (6)r0	i1	$i12	i9	i3	i10	
+Before: (6)r0	i1	$i12	$i5	i3	i9	
+Before: (7)r0	i1	$i12	i10	i3	i9	$i5	
+Before: (8)r0	i1	$i12	i10	i3	i9	$i5	$i4	
+Before: (7)r0	i1	$i12	i10	i3	i9	$i5
+
+Before: (3)r0	i1	$i12	
+Before: (7)r0	i1	i10	i3	i9	$i5	$i12	
+Before: (8)r0	i1	i10	i3	i9	$i5	i14	$i12	
+Before: (9)r0	i1	i10	i3	i9	$i5	i14	$i12	$i6	
+Before: (7)r0	i1	i10	i3	i9	$i5	i14	
+Before: (5)r0	i1	i10	i3	i9	
+Before: (3)r0	i1	$i12	
+Before: (4)r0	i1	i15	$i12	
+Before: (5)r0	i1	i15	$i12	$i7	
+Before: (3)r0	i1	i15	
+Before: (0)
+
+Process finished with exit code 0
