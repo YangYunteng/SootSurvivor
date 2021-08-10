@@ -27,10 +27,10 @@ public class ShowWheelLive {
 
             System.out.println("Stmt: " + unit);
 
-            System.out.print("After: ");
-            for (Local local : after)
-                System.out.print(local + "\t");
-            System.out.println();
+//            System.out.print("After: ");
+//            for (Local local : after)
+//                System.out.print(local + "\t");
+//            System.out.println();
         }
     }
 }

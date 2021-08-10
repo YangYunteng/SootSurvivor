@@ -1,19 +1,13 @@
 package liveVariableAnalysis;
 
-import liveVariableAnalysis.wheelAnalysis.ShowWheelLive;
+import liveVariableAnalysis.MyAnalysis.MyLiveAnalysis;
 import soot.*;
-import soot.jimple.Stmt;
-import soot.options.Options;
 import soot.toolkits.graph.BriefUnitGraph;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
 
-public class WheelMain {
+public class MyMain {
     private static final String sourceDir = "assets";
     private static final String className = "lab3";
-
 
     public static void main(String[] args) {
         Utils.setUpSoot(sourceDir);
@@ -23,7 +17,17 @@ public class WheelMain {
 
             Body body = sm.getActiveBody();
             BriefUnitGraph briefUnitGraph = new BriefUnitGraph(body);
-            ShowWheelLive showWheelLive = new ShowWheelLive(briefUnitGraph);
+
+            MyLiveAnalysis myLiveAnalysis = new MyLiveAnalysis(briefUnitGraph);
+            myLiveAnalysis.doAnalysis();
+//            for(Unit unit:briefUnitGraph){
+//                myLiveAnalysis.printLocalsBefore(unit);
+//                System.out.println(unit);
+//            }
+//            for(Unit unit:briefUnitGraph.getHeads()){
+//                System.out.println(briefUnitGraph.getPredsOf(unit).size());
+//            }
         }
     }
+
 }

@@ -1,0 +1,117 @@
+public class lab3 extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        lab3 r0;
+
+        r0 := @this: lab3;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        int i0, $i1;
+        java.lang.String[] r0;
+
+        r0 := @parameter0: java.lang.String[];
+
+        i0 = staticinvoke <lab3: int func()>();
+
+        $i1 = i0 + 10;
+
+        staticinvoke <lab3: void func1(int,int)>(i0, $i1);
+
+        return;
+    }
+
+    public static int func()
+    {
+        int $i3, i6;
+
+        i6 = 5 + 6;
+
+        goto label1;
+
+     label1:
+        $i3 = i6 + 0;
+
+        return $i3;
+    }
+
+    public static void func1(int, int)
+    {
+        int i0, i1, $i2, i3, $i4, $i5, $i6, $i7, i8, i9, i10, $i11, i12, i13;
+        int[] r0;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        i8 = i0 - 1;
+
+        i9 = i1;
+
+        $i2 = i1 + 1;
+
+        r0 = newarray (int)[$i2];
+
+        i3 = r0[i1];
+
+        i10 = 0;
+
+     label1:
+        if i10 > i1 goto label2;
+
+        $i7 = i10 * 3;
+
+        r0[i10] = $i7;
+
+        i10 = i10 + 1;
+
+        goto label1;
+
+     label2:
+        i8 = i8 + 1;
+
+        $i11 = r0[i8];
+
+        if $i11 < i3 goto label2;
+
+     label3:
+        i9 = i9 - 1;
+
+        $i4 = r0[i9];
+
+        if $i4 < i3 goto label3;
+
+        if i8 < i9 goto label4;
+
+        goto label5;
+
+     label4:
+        i12 = r0[i8];
+
+        $i5 = r0[i9];
+
+        r0[i8] = $i5;
+
+        r0[i9] = i12;
+
+        goto label2;
+
+     label5:
+        i13 = r0[i8];
+
+        $i6 = r0[i1];
+
+        r0[i8] = $i6;
+
+        r0[i1] = i13;
+
+        return;
+    }
+}
