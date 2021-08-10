@@ -20,13 +20,12 @@ public class ShowWheelLive {
             unitToLiveBefore.put(unit, before);
             FlowSet<Local> after = wheelLiveAnalysis.getFlowAfter(unit);
             unitToLiveAfter.put(unit, after);
-            System.out.print("Before: ");
+            System.out.print("Before: ("+before.size()+")");
             for (Local local : before)
                 System.out.print(local + "\t");
             System.out.println();
 
-            System.out.println("Stmt: " + unit);
-
+//            System.out.println("Stmt: " + unit);
 //            System.out.print("After: ");
 //            for (Local local : after)
 //                System.out.print(local + "\t");

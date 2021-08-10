@@ -17,16 +17,14 @@ public class MyMain {
 
             Body body = sm.getActiveBody();
             BriefUnitGraph briefUnitGraph = new BriefUnitGraph(body);
-
+            for(Unit unit:briefUnitGraph)
+                System.out.println(unit);
             MyLiveAnalysis myLiveAnalysis = new MyLiveAnalysis(briefUnitGraph);
             myLiveAnalysis.doAnalysis();
-//            for(Unit unit:briefUnitGraph){
-//                myLiveAnalysis.printLocalsBefore(unit);
-//                System.out.println(unit);
-//            }
-//            for(Unit unit:briefUnitGraph.getHeads()){
-//                System.out.println(briefUnitGraph.getPredsOf(unit).size());
-//            }
+            for(Unit unit:briefUnitGraph){
+                myLiveAnalysis.printLocalsBefore(unit);
+            }
+           
         }
     }
 
